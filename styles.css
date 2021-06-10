@@ -14,11 +14,48 @@ body {
 }
 
 .card {
-  width: 380px;
+  width: 320px;
   height: 340px;
   background: white;
   border-radius: 10px;
   position: relative;
   display: flex;
   cursor: pointer;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.13);
+}
+
+.card ::before {
+  content: "";
+  position: absolute;
+  top: 2%;
+  width: 95%;
+  height: 120px;
+  z-index: 1;
+  border-radius: 10px 10px 0 0;
+  background: #ff9472;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.13);
+  transform-origin: bottom;
+  transition: transform 0.4s;
+}
+
+.card:hover::before {
+  transform: translateY(-5px) scaleY(1.2);
+}
+
+.card .img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  z-index: 10;
+  transform: translateY(50px);
+  border: 10px solid white;
+  overflow: hidden;
+  position: absolute;
+}
+
+.card .img img {
+  width: 120%;
+  height: 120%;
+  transform: translate(-8%, -8%);
 }
