@@ -9,6 +9,52 @@ body {
   color: rgb(34, 34, 34);
   height: 100vh;
   display: flex;
+
   justify-content: center;
   align-items: center;
+}
+
+.card {
+  width: 320px;
+  height: 340px;
+  background: white;
+  border-radius: 10px;
+
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.13);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 2%;
+  z-index: 1;
+
+  width: 95%;
+  height: 120px;
+  border-radius: 10px 10px 0 0;
+  background: #ff9472;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.13);
+
+  transform-origin: bottom;
+  transition: transform .4s;
+}
+
+.card:hover::before {
+  transform: translateY(05px) scaleY(1.2);
+}
+
+.card .img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  z-index: 10;
+
+  transform: translateY(50px);
+  border: 10px solid #fff;
+  overflow: hidden;
+  position: absolute;
 }
